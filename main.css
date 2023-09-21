@@ -13,23 +13,23 @@
 
 /*   ----- Variables  -----  */
 :root {
-    --light-color: #F2CDAC;
-    --medium-color: #F2AD85;
-    --dark-color:  #401201;
-    --accent-color: rgba(0,255,0,0.3);
+    --light-color: rgb(197, 253, 236);
+    --medium-color: rgb(0, 128, 85);
+    --dark-color:  #080f22;
+    --accent-color: rgba(123, 255, 0, 0.3);
   }
   
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
   body {       /* Can alternatively define in html {} or :root {} */
     background-color:#101820;
-    background-image: url(images/gradient\ constellation.avif);
+    
     background-size: cover;
     background-repeat: no-repeat;
     
     
     
     max-width: auto;
-    color: var(--dark-color);
+    color: var(--light-color);
     font-family:'Roboto', sans-serif; /* Define with at least one font name and its related generic family name.*/
     margin-left:5%;
     margin-right: 5%;
@@ -43,16 +43,20 @@
   main {
 
   }
-  section {
-    padding: 1%;
-    margin: 1%;
-    
-}
-    article {
+  #header {
+    background-image: url(images/gradient\ constellation.avif);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    border: var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+  }
+  section {padding: 1%;}
+  article {
         border-radius: 5px;
         padding-bottom: 5px;
-        background-color: var(--medium-color);
-        color: var(--dark-color);
+        background-color: var(--dark-color);
+        color: var(--light-color);
        
     }
       #topic1 {}
@@ -62,7 +66,7 @@
   footer {
     border-radius: 5px;
     background-color: var(--dark-color);
-    color: var(--accent-color);
+    color: var(--light-color);
     padding: 5px;
     margin-top: 100px;
     text-align: center;
@@ -80,19 +84,19 @@
   /*  ----- Navigation ----- Override text links for navigation only.  */
   nav {
     text-align: center;
-    padding: 1%;
+    padding: 3%;
 }
   nav a {
-    background-color: green;
-    color: whitesmoke;
+
+    color: var(--light-color);
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
     padding: 15px;
     margin: 10px;
     border-radius: 15px;
   }
   nav a:hover {
-    background-color: grey;
+
     color: whitesmoke;
   }
 
@@ -107,8 +111,7 @@
   h1, h2, h3, h4, h5, h6 {font-family: 'Aboreto', cursive;} 
   h1 {}
   h2 {}
-  h3 {
-  }
+  h3 {}
   h4 {}
   h5 {}
   h6 {}
@@ -180,8 +183,7 @@
     figcaption {
     
     }
-   
-    }
+
   svg {}
   picture {}
     source {}
@@ -195,10 +197,10 @@
     width: auto;
   }
   #linkedin_logo {
-    height: 20px;
+    height: 30px;
     width: auto;
   }
-  
+ 
   /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
   .gallery {}
   
