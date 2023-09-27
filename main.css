@@ -1,22 +1,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto:wght@300&display=swap');  
-  
+ @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Russo+One&display=swap'); 
   /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
         /* npm install modern-normalize
           Resets elements for browser consistency.  
           https://www.npmjs.com/package/modern-normalize
         */         
   
-  
+
 @import "component1.css";   
   
 
 /*   ----- Variables  -----  */
 :root {
     --light-color: rgb(197, 253, 236);
-    --medium-color: rgb(0, 128, 85);
+    --medium-color: #008cff;
     --dark-color:  #080f22;
-    --accent-color: rgba(123, 255, 0, 0.3);
+    --accent-color: rgba(255, 50, 35, 0.75);
   }
   
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
@@ -31,33 +31,46 @@
     max-width: auto;
     color: var(--light-color);
     font-family:'Roboto', sans-serif; /* Define with at least one font name and its related generic family name.*/
-    margin-left:5%;
-    margin-right: 5%;
-    padding:0px;
+    margin-left:2%;
+    margin-right: 2%;
+    
 }
   
   /*  ----- Page layout blocks -----  */
   head {
     
 }
-  main {
-
+  .main {
+    margin-top: 10%;
   }
   #header {
     background-image: url(images/gradient\ constellation.avif);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover ;
-    border: var(--accent-color);
+    position: fixed;
+    width: 95%;
+    top: 0;
+    border-style: solid;
+    border-color: var(--dark-color);
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
   }
-  section {padding: 1%;}
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  section {padding: 1%;
+    
+  }
   article {
         border-radius: 5px;
         padding-bottom: 5px;
         background-color: var(--dark-color);
         color: var(--light-color);
-       
+        border: 2px var(--light-color) inset;
     }
       #topic1 {}
       #topic2 {}
@@ -67,11 +80,11 @@
     border-radius: 5px;
     background-color: var(--dark-color);
     color: var(--light-color);
-    padding: 5px;
-    margin-top: 100px;
+    padding: 4px;
     text-align: center;
-    font-size: 20px;
-    
+    font-size: 16px;
+    margin-top: 10%;
+    border: 3px solid var(--medium-color);
 }
   
   /* ----- Anchors ----- Text links */
@@ -85,32 +98,51 @@
   nav {
     text-align: center;
     padding: 3%;
+    
 }
   nav a {
-
     color: var(--light-color);
     font-weight: bold;
     text-decoration: underline;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 15px;
+    padding: 9px;
+    margin: 2px;
+    border-radius: 10px;
+    border: 3px solid var(--dark-color);
+    background-image: linear-gradient(maroon,var(--dark-color));
   }
   nav a:hover {
-
-    color: whitesmoke;
+    color: var(--dark-color);
+    background-image: linear-gradient(red, yellow);
+    border: 3px solid red;
   }
 
   /*  -----  Typography  ----- */
-  p {}
+  p {text-align: center;}
   br {}
   ol, ul, dl {}
   li {}
   dt {}
   dd {}
+  .anchor {
+    margin-top: 10%;
+    
+  }
+    
   
   h1, h2, h3, h4, h5, h6 {font-family: 'Aboreto', cursive;} 
-  h1 {}
-  h2 {}
+  h1 {font-family: 'Russo One';
+    animation: headShake;
+  animation-duration: 1s;
+}
+  .page-title {
+    margin-left: 2%;
+  }
+  h2 {text-align: center;
+    padding-top: 1%;
+    padding-bottom: 2px;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+  }
   h3 {}
   h4 {}
   h5 {}
@@ -131,7 +163,73 @@
   sub {}
   sup {}
   time {}
+  #about-me {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  #projects-section {
+    display: flex;
+    justify-content:space-around;
+  }
+  .project-info {
+    background-image: linear-gradient(var(--medium-color),maroon);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    
+  }
+  .project-tech {
+    border-radius: 5px;
+    padding: 4px;
+  }
+  .project-link {
+    background-image: linear-gradient(green, lightgreen);
+    padding-left:  90px;
+    padding-right: 90px;
+    border-radius: 5px;
+    
+    color: var(--dark-color);
+    text-decoration: none;
+  }
+  .project-link-none{
+    background-color: gray;
+    padding-left:  80px;
+    padding-right: 80px;
+    border-radius: 5px;
+    color: var(--dark-color);
+    cursor: not-allowed;
+  }
   
+  .project-notes {
+    
+    text-align: left;
+    margin: 10px;
+
+  }
+  .project-link:hover {
+    color: var(--dark-color);
+    background-image: linear-gradient(red, yellow);
+    border: 3px solid var(--accent-color);
+    padding-left:  90px;
+    padding-right: 90px;
+    border-radius: 5px;
+  }
+  .project-display{
+    text-align: center;
+    padding-top: 2%;
+    border: 1px var(--accent-color) solid;
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+  }
+  .tag{
+    background-color: var(--accent-color);
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 14px;
+  }
   /*  ----- Coding or instructional typography ----- */
   pre {}
   code {}
@@ -173,16 +271,6 @@
     textarea {}
   
   /* ----- Media ----- */
-.gallery{
-    
-}
-
-  figure {
- 
-  }
-    figcaption {
-    
-    }
 
   svg {}
   picture {}
@@ -192,14 +280,20 @@
   audio {}
   embed {}
   object {}
-  #profile_pic {
+  #profile-pic {
     height: 225px;
     width: auto;
+    border-radius: 5px;
+    border: 2px ridge var(--medium-color);
+    margin-left: 5%;
+    margin-bottom: 1%;
   }
-  #linkedin_logo {
-    height: 30px;
-    width: auto;
-  }
+ .thumbnail{
+  height: 225px;
+  width: auto;
+  border-radius: 10px;
+  
+ }
  
   /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
   .gallery {}
